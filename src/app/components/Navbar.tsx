@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "../../assets/logo.png";
 
 const navLinks = [
   { label: "首頁", href: "#hero" },
@@ -37,18 +38,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center shadow-lg">
-              <span
-                className="text-[#8B0000]"
-                style={{
-                  fontFamily: "'Noto Serif TC', serif",
-                  fontSize: "14px",
-                  fontWeight: 900,
-                }}
-              >
-                學
-              </span>
-            </div>
+            <img
+              src={logo}
+              alt="xzgs logo"
+              className="h-10 w-auto"
+            />
             <span
               className="text-white hidden sm:block"
               style={{

@@ -1,7 +1,7 @@
 
-  # china
+  # xzgs
 
-  This is a code bundle for china. The original project is available at https://www.figma.com/design/cCUeoA22hJCY2sKr2YPFGV/china.
+  This is a code bundle for xzgs. The original project is available at https://www.figma.com/design/cCUeoA22hJCY2sKr2YPFGV/china.
 
   ## Running the code
 

@@ -1,3 +1,5 @@
+import logo from "../../assets/logo.png";
+
 export function Footer() {
   return (
     <footer className="relative bg-[#1A0A00] py-10">
@@ -7,18 +9,11 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo & Name */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center">
-              <span
-                className="text-[#8B0000]"
-                style={{
-                  fontFamily: "'Noto Serif TC', serif",
-                  fontSize: "14px",
-                  fontWeight: 900,
-                }}
-              >
-                學
-              </span>
-            </div>
+            <img
+              src={logo}
+              alt="xzgs logo"
+              className="h-10 w-auto"
+            />
             <div>
               <p
                 className="text-white"
@@ -37,7 +32,7 @@ export function Footer() {
                   fontSize: "11px",
                 }}
               >
-                學習強國 AI 學習機
+                新中國史數字學習系統
               </p>
             </div>
           </div>
