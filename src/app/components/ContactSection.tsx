@@ -43,8 +43,9 @@ export function ContactSection() {
           className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8"
         >
           {[
-            { icon: Mail, text: "info@learningchina.hk" },
-            { icon: Phone, text: "+852 XXXX XXXX" },
+            { icon: Mail, text: "service@xzgs.org" },
+            { icon: Mail, text: "service2@xzgs.org" },
+            { icon: Phone, text: "+86 19924568214" },
             { icon: MapPin, text: "香港特別行政區" },
           ].map((item) => (
             <div key={item.text} className="flex items-center gap-2">
