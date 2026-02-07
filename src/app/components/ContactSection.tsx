@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Mail, MapPin, Send } from "lucide-react";
+// QR Code images - 如果图片不存在，请将二维码图片放在 src/assets/ 目录下
+// import whatsappQr from "../../assets/whatsapp-qr.png";
+// import wechatQr from "../../assets/wechat-qr.png";
 
 /**
  * WhatsApp Logo Component
@@ -64,19 +67,13 @@ export function ContactSection() {
           {[
             { icon: Mail, text: "service@xzgs.org" },
             { icon: Mail, text: "service2@xzgs.org" },
-            { icon: WhatsAppLogo, text: "+86 19924568214", tooltip: "WhatsApp" },
             { icon: MapPin, text: "香港特別行政區" },
           ].map((item) => (
             <div 
               key={item.text} 
               className="flex items-center gap-2"
-              title={item.tooltip || ""}
             >
-              {item.icon === WhatsAppLogo ? (
-                <WhatsAppLogo size={16} className="text-[#8B0000]" />
-              ) : (
-                <item.icon size={16} className="text-[#8B0000]" />
-              )}
+              <item.icon size={16} className="text-[#8B0000]" />
               <span
                 className="text-[#5A4A3A]"
                 style={{
@@ -89,6 +86,208 @@ export function ContactSection() {
               </span>
             </div>
           ))}
+        </motion.div>
+
+        {/* QR Code Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-5xl mx-auto"
+        >
+          {/* WhatsApp QR Code 1 - S~XZGS */}
+          <div className="flex flex-col items-center">
+            <div className="mb-2 flex items-center gap-1.5">
+              <WhatsAppLogo size={16} className="text-[#8B0000]" />
+              <span
+                className="text-[#2D1B00]"
+                style={{
+                  fontFamily: "'Noto Sans TC', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                }}
+              >
+                WhatsApp
+              </span>
+            </div>
+            <div className="w-32 h-32 bg-white rounded-lg shadow-md p-2 flex items-center justify-center border-2 border-[#8B0000]/20">
+              <img
+                src="/whatsapp.png"
+                alt="WhatsApp QR Code - S~XZGS"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p
+              className="text-[#5A4A3A] mt-1.5 text-center font-semibold"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+              }}
+            >
+              S~XZGS
+            </p>
+            <p
+              className="text-[#5A4A3A] mt-0.5 text-center"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "11px",
+                fontWeight: 400,
+              }}
+            >
+              掃描二維碼添加
+            </p>
+          </div>
+
+          {/* WeChat QR Code 1 - S~XZGS */}
+          <div className="flex flex-col items-center">
+            <div className="mb-2 flex items-center gap-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-[#8B0000]"
+              >
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.712c-1.33-.12-3.37.405-4.88 1.674-1.623 1.347-2.465 3.53-1.69 5.785a.821.821 0 0 1-.04.485 9.214 9.214 0 0 1-2.405-.741.659.659 0 0 0-.748.098l-1.84 1.077c.015-.15.015-.302 0-.453-.003-.152-.02-.303-.048-.453l.39-1.48a.59.59 0 0 0-.213-.665c-1.832-1.347-3.002-3.338-3.002-5.55 0-3.75 3.476-6.788 7.768-6.788.276 0 .543.015.811.05-.157.02-.315.02-.472.05zm-2.34 4.63c.518 0 .938.427.938.953a.945.945 0 0 1-.938.948.945.945 0 0 1-.937-.948c0-.526.42-.953.937-.953zm4.688 0c.518 0 .938.427.938.953a.945.945 0 0 1-.938.948.945.945 0 0 1-.937-.948c0-.526.42-.953.937-.953z"/>
+              </svg>
+              <span
+                className="text-[#2D1B00]"
+                style={{
+                  fontFamily: "'Noto Sans TC', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                }}
+              >
+                WeChat
+              </span>
+            </div>
+            <div className="w-32 h-32 bg-white rounded-lg shadow-md p-2 flex items-center justify-center border-2 border-[#8B0000]/20">
+              <img
+                src="/Wechat.png"
+                alt="WeChat QR Code - S~XZGS"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p
+              className="text-[#5A4A3A] mt-1.5 text-center font-semibold"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+              }}
+            >
+              S~XZGS
+            </p>
+            <p
+              className="text-[#5A4A3A] mt-0.5 text-center"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "11px",
+                fontWeight: 400,
+              }}
+            >
+              掃描二維碼添加
+            </p>
+          </div>
+
+          {/* WhatsApp QR Code 2 - C-XZGS */}
+          <div className="flex flex-col items-center">
+            <div className="mb-2 flex items-center gap-1.5">
+              <WhatsAppLogo size={16} className="text-[#8B0000]" />
+              <span
+                className="text-[#2D1B00]"
+                style={{
+                  fontFamily: "'Noto Sans TC', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                }}
+              >
+                WhatsApp
+              </span>
+            </div>
+            <div className="w-32 h-32 bg-white rounded-lg shadow-md p-2 flex items-center justify-center border-2 border-[#8B0000]/20">
+              <img
+                src="/whatsapp2.png"
+                alt="WhatsApp QR Code - C-XZGS"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p
+              className="text-[#5A4A3A] mt-1.5 text-center font-semibold"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+              }}
+            >
+              C-XZGS
+            </p>
+            <p
+              className="text-[#5A4A3A] mt-0.5 text-center"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "11px",
+                fontWeight: 400,
+              }}
+            >
+              掃描二維碼添加
+            </p>
+          </div>
+
+          {/* WeChat QR Code 2 - C-XZGS */}
+          <div className="flex flex-col items-center">
+            <div className="mb-2 flex items-center gap-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-[#8B0000]"
+              >
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.712c-1.33-.12-3.37.405-4.88 1.674-1.623 1.347-2.465 3.53-1.69 5.785a.821.821 0 0 1-.04.485 9.214 9.214 0 0 1-2.405-.741.659.659 0 0 0-.748.098l-1.84 1.077c.015-.15.015-.302 0-.453-.003-.152-.02-.303-.048-.453l.39-1.48a.59.59 0 0 0-.213-.665c-1.832-1.347-3.002-3.338-3.002-5.55 0-3.75 3.476-6.788 7.768-6.788.276 0 .543.015.811.05-.157.02-.315.02-.472.05zm-2.34 4.63c.518 0 .938.427.938.953a.945.945 0 0 1-.938.948.945.945 0 0 1-.937-.948c0-.526.42-.953.937-.953zm4.688 0c.518 0 .938.427.938.953a.945.945 0 0 1-.938.948.945.945 0 0 1-.937-.948c0-.526.42-.953.937-.953z"/>
+              </svg>
+              <span
+                className="text-[#2D1B00]"
+                style={{
+                  fontFamily: "'Noto Sans TC', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                }}
+              >
+                WeChat
+              </span>
+            </div>
+            <div className="w-32 h-32 bg-white rounded-lg shadow-md p-2 flex items-center justify-center border-2 border-[#8B0000]/20">
+              <img
+                src="/wechat2.png"
+                alt="WeChat QR Code - C-XZGS"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <p
+              className="text-[#5A4A3A] mt-1.5 text-center font-semibold"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+              }}
+            >
+              C-XZGS
+            </p>
+            <p
+              className="text-[#5A4A3A] mt-0.5 text-center"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "11px",
+                fontWeight: 400,
+              }}
+            >
+              掃描二維碼添加
+            </p>
+          </div>
         </motion.div>
 
         {/* Form link */}
