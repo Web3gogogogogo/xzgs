@@ -62,7 +62,7 @@ export function HeroSection() {
             lineHeight: 1.2,
           }}
         >
-          新中國史<span className="text-[#FFD700]">數字學習機</span>
+          愛國主義教育<span className="text-[#FFD700]">AI數字學習平台</span>
         </motion.h1>
 
         <motion.p

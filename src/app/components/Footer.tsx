@@ -23,7 +23,7 @@ export function Footer() {
                   fontWeight: 700,
                 }}
               >
-                新中國史數字學習機
+                愛國主義教育AI數字學習平台
               </p>
               <p
                 className="text-white/40"
