@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import productImage from "../../assets/4a837ad82e5ef92d37f0c589a282ab639d51ec8a.png";
+
+const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/4mqWDqDUJKA";
 
 export function ShowcaseSection() {
   return (
@@ -34,11 +35,13 @@ export function ShowcaseSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative rounded-xl overflow-hidden shadow-xl border border-[#8B0000]/15">
-              <img
-                src={productImage}
-                alt="新中國史數字學習系統主介面"
-                className="w-full h-auto"
+            <div className="relative rounded-xl overflow-hidden shadow-xl border border-[#8B0000]/15 aspect-video">
+              <iframe
+                src={YOUTUBE_EMBED_URL}
+                title="新中國史數字學習系統主介面"
+                className="w-full h-full absolute inset-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
             <p

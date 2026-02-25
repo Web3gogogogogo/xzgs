@@ -72,8 +72,9 @@ export function Navbar() {
               </button>
             ))}
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href="https://xzgs.gitbook.io/ai-guo-zhu-yi-jiao-yu-ai-shu-zi-xue-xi-ping-tai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg text-white/90 hover:text-[#FFD700] hover:bg-white/10 transition-all cursor-pointer"
               style={{
                 fontFamily: "'Noto Sans TC', sans-serif",
