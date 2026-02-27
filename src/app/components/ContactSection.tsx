@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Phone } from "lucide-react";
 // QR Code images - 如果图片不存在，请将二维码图片放在 src/assets/ 目录下
 // import whatsappQr from "../../assets/whatsapp-qr.png";
 // import wechatQr from "../../assets/wechat-qr.png";
@@ -67,6 +67,7 @@ export function ContactSection() {
           {[
             { icon: Mail, text: "service@xzgs.org" },
             { icon: Mail, text: "service2@xzgs.org" },
+            { icon: Phone, text: "聯絡電話/WhatsApp:+852 6036 0209" },
             { icon: MapPin, text: "香港特別行政區" },
           ].map((item) => (
             <div 

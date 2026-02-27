@@ -1,8 +1,8 @@
-import { Award, Eye, Handshake, Wrench } from "lucide-react";
+import { Award, Eye, Handshake, Wrench, Building2 } from "lucide-react";
 
 const authorities = [
   { icon: Award, role: "指導部門", name: "中共中央宣傳部" },
-  { icon: Eye, role: "監製機構", name: "中華人民共和國國史學會" },
+  { icon: Eye, role: "監製機構", name: "學習強國讀書會、中華人民共和國國史學會" },
   {
     icon: Handshake,
     role: "支持機構",
@@ -13,6 +13,7 @@ const authorities = [
     role: "研發單位",
     name: "北京五洲傳媒及當代大華文化傳播公司聯合出品",
   },
+  { icon: Building2, role: "出品單位", name: "妙智科技（香港）有限公司" },
 ];
 
 function MarqueeItem({

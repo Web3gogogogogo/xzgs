@@ -1,8 +1,34 @@
 import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
 
-const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/4mqWDqDUJKA";
+const PRIMARY_VIDEO_URL =
+  "https://hk-1329293903.cos.ap-hongkong.myqcloud.com/Web%20/%E6%84%9B%E5%9C%8B%E4%B8%BB%E7%BE%A9%E6%95%99%E8%82%B2ai%E6%95%B8%E5%AD%97%E5%AD%B8%E7%BF%92%E5%B9%B3%E5%8F%B0-1.webm";
+const FALLBACK_VIDEO_URL =
+  "https://hk-1329293903.cos.ap-hongkong.myqcloud.com/video/xuanchuan/xuanchuan.mp4";
 
 export function ShowcaseSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+  }, []);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        if (v.muted) v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+    observer.observe(v);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="showcase" className="relative py-14 md:py-20 bg-[#FDF8F0]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,13 +62,18 @@ export function ShowcaseSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative rounded-xl overflow-hidden shadow-xl border border-[#8B0000]/15 aspect-video">
-              <iframe
-                src={YOUTUBE_EMBED_URL}
+              <video
+                ref={videoRef}
                 title="新中國史數字學習系統主介面"
-                className="w-full h-full absolute inset-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              >
+                <source src={PRIMARY_VIDEO_URL} type="video/webm" />
+                <source src={FALLBACK_VIDEO_URL} type="video/mp4" />
+                您的瀏覽器不支援視頻播放。
+              </video>
             </div>
             <p
               className="text-center text-[#7A6A5A] mt-3"
