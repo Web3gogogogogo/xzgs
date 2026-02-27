@@ -55,6 +55,19 @@ export function ContactSection() {
           >
             歡迎各教育機構、學校及組織聯絡我們，了解更多產品資訊
           </p>
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <Phone size={16} className="text-[#8B0000]" />
+            <span
+              className="text-[#5A4A3A]"
+              style={{
+                fontFamily: "'Noto Sans TC', sans-serif",
+                fontSize: "22px",
+                fontWeight: 400,
+              }}
+            >
+              聯絡電話/WhatsApp:+852 6036 0209
+            </span>
+          </div>
         </motion.div>
 
         {/* Contact info bar */}
@@ -67,7 +80,6 @@ export function ContactSection() {
           {[
             { icon: Mail, text: "service@xzgs.org" },
             { icon: Mail, text: "service2@xzgs.org" },
-            { icon: Phone, text: "聯絡電話/WhatsApp:+852 6036 0209" },
             { icon: MapPin, text: "香港特別行政區" },
           ].map((item) => (
             <div 
