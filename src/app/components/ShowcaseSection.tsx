@@ -12,21 +12,7 @@ export function ShowcaseSection() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = true;
-  }, []);
-
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        if (v.muted) v.play().catch(() => {});
-      } else {
-        v.pause();
-      }
-    });
-    observer.observe(v);
-    return () => observer.disconnect();
+    v.muted = false; // 默认有声音
   }, []);
 
   return (
