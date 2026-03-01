@@ -69,7 +69,7 @@ export function ShowcaseSection() {
                 fontWeight: 400,
               }}
             >
-              涵蓋國史大講堂、時代楷模、影像國史、國史影院等豐富模組
+              涵蓋國史大講堂、時代楷模、影像國史、國史影院等豐富模塊
             </p>
           </motion.div>
         </div>
