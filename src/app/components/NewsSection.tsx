@@ -105,10 +105,10 @@ export function NewsSection() {
         </motion.div>
 
         {/* News Carousel Container */}
-        <div className="relative h-[400px] md:h-[450px] overflow-hidden rounded-xl border border-[#E8D5B5]/50 bg-white shadow-sm">
+        <div className="relative h-[280px] md:h-[300px] overflow-hidden rounded-xl border border-[#E8D5B5]/50 bg-white shadow-sm">
           {/* Gradient masks for fade effect */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
           
           <div className="h-full overflow-hidden">
             <motion.div
