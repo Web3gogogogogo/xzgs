@@ -1,6 +1,7 @@
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
+import { NewsSection } from "./components/NewsSection";
 import { StatsSection } from "./components/StatsSection";
 import { ShowcaseSection } from "./components/ShowcaseSection";
 import { ScenariosSection } from "./components/ScenariosSection";
@@ -15,6 +16,7 @@ export default function App() {
       <HeroSection />
       <AboutSection />
       <StatsSection />
+      <NewsSection />
       <ShowcaseSection />
       <ScenariosSection />
       <AuthoritySection />

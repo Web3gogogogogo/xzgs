@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 const navLinks = [
   { label: "首頁", href: "#hero" },
   { label: "產品簡介", href: "#about" },
+  { label: "新聞資訊", href: "#news" },
   { label: "系統展示", href: "#showcase" },
   { label: "應用場景", href: "#scenarios" },
   { label: "聯絡我們", href: "#contact" },
