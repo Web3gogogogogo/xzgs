@@ -11,7 +11,7 @@ const authorities = [
   {
     icon: Wrench,
     role: "出品單位",
-    name: "北京五洲傳媒及當代大華文化傳播公司",
+    name: "北京五洲融媒及當代大華文化傳播公司",
   },
   { icon: Building2, role: "研發單位", name: "妙智科技（香港）有限公司" },
 ];
