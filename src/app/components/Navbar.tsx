@@ -9,6 +9,7 @@ const navLinks = [
   { label: "系統展示", href: "#showcase" },
   { label: "應用場景", href: "#scenarios" },
   { label: "聯絡我們", href: "#contact" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
@@ -7,6 +8,7 @@ import { ShowcaseSection } from "./components/ShowcaseSection";
 import { ScenariosSection } from "./components/ScenariosSection";
 import { AuthoritySection } from "./components/AuthoritySection";
 import { ContactSection } from "./components/ContactSection";
+import { FAQSection } from "./components/FAQSection";
 import { Footer } from "./components/Footer";
 
 export default function App() {
@@ -21,6 +23,7 @@ export default function App() {
       <ScenariosSection />
       <AuthoritySection />
       <ContactSection />
+      <FAQSection />
       <Footer />
     </div>
   );
