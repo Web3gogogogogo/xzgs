@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const navLinks = [
@@ -10,20 +11,43 @@ const navLinks = [
   { label: "應用場景", href: "#scenarios" },
   { label: "聯絡我們", href: "#contact" },
   { label: "FAQ", href: "#faq" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(!isHome);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    // 非首頁：一進入頁面就使用紅色導航，不再依賴滾動
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
+
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
+    // Blogs 等獨立頁面
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+
+    // 首頁內部區塊：如果當前不在首頁，先跳回首頁並帶上 hash
+    if (!isHome) {
+      navigate({ pathname: "/", hash: href });
+      return;
+    }
+
+    // 已在首頁，直接平滑滾動
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
